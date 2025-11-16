@@ -2,15 +2,15 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
-import { typeORMConfig } from './config/typeorm.config';;
-import { PaymentinfoModule } from './paymentinfo/paymentinfo.module';
-import { PagoMovilModule } from './pago-movil/pago-movil.module';
-import { PagoTransferenciaModule } from './pago-transferencia/pago-transferencia.module';
+import { typeORMConfig } from '../config/typeorm.config';;
+import { PaymentinfoModule } from '../modules/paymentinfo/paymentinfo.module';
+import { PagoMovilModule } from '../modules/pagomovil/pago-movil.module';
+import { PagoTransferenciaModule } from '../modules/pagotransferencia/pago-transferencia.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { BancoModule } from './banco/banco.module';
-import { TarifaModule } from './controller/tarifa.module';
-import { FacturaModule } from './lista-factura/lista-factura.module';
-import { PrecioModule } from './precio/precio.module';
+import { BancoModule } from '../modules/banco/banco.module';
+import { TarifaModule } from '../modules/precio/tarifa.module';
+import { FacturaModule } from '../modules/factura/lista-factura.module';
+import { PrecioModule } from '../modules/precio/precio.module';
 
 @Module({
   imports: [
