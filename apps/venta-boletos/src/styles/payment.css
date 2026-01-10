@@ -51,7 +51,7 @@ input[type='text']:focus {
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 20px;
-  color: #fff;
+  color: #000;
 }
 
 /* Ajustes para el layout */

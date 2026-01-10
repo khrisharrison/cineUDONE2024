@@ -2,9 +2,13 @@
   align-items: center;
   color: #ffffff;
   font-weight: bold;
-  width: 350px;
+  width: 350px; /*100%;*/
+  /*min-height: 520px;  match payment panel min-height */
   border-radius: 25px;
-}
+  /*display: flex;
+  flex-direction: column;
+  justify-content: flex-start;*/
+} 
 
 .detalles h1 {
   font-size: 24px;
@@ -18,14 +22,16 @@ p {
   text-align: justify;
 }
 img {
-  width: 90%;
+  width: 100%;
+  /*max-width: 100%;*/
   margin: 0 auto;
   border-radius: 16px;
+  object-fit: cover;
 }
 .detalles table {
   width: 100%;
   margin: 0 auto;
 }
 .detalles-funcion {
-  text-align: center;
+  text-align: left;
 }
