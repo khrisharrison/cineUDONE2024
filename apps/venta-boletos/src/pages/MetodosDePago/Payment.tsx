@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import '../../styles/payment.css';
 import useFetchPagos from './services/useFetchPagos';
@@ -71,6 +71,11 @@ const Payment = () => {
     setReferencia,
     setErrorReferencia
   );
+
+  useEffect(() => {
+    // Desplaza la ventana al inicio cuando la página de pago se monta
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   return (
     <div className="flex items-start justify-center w-full min-h-screen gap-6 px-4">

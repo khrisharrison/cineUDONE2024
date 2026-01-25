@@ -121,6 +121,11 @@ export const handlePago = async (
     }
 
     const bancoCodigo = banco.codigoBanco.codigo;
+
+    // Fecha en formato SQL compatible: 'YYYY-MM-DD HH:MM:SS'
+    const now = new Date();
+    const formattedFecha = now.toISOString().slice(0, 19).replace('T', ' ');
+
     const datosPago: DatosPago = {
       referencia,
       metodo: tipoPago === 'pagoMovil' ? 'Pago Movil' : 'Transferencia',
@@ -128,7 +133,7 @@ export const handlePago = async (
       horaFuncion, 
       monto: parseFloat(total),
       id: banco.id,
-      fecha: new Date(),
+      fecha: formattedFecha,
       estado: 'confirmado',
       codigoBanco: bancoCodigo,
       correo,

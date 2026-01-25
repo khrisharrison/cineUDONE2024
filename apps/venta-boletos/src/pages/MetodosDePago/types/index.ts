@@ -26,7 +26,7 @@ export interface DatosPago {
   referencia: string;
   codigoBanco: string;
   metodo: string;
-  fecha: Date;
+  fecha: string;
   fechaFuncion: string; 
   horaFuncion: string;
   monto: number;

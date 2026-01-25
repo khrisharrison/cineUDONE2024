@@ -2,7 +2,7 @@ import React from 'react';
 import { TicketRowProps } from '../types/index';
 
 const FilaEntrada: React.FC<TicketRowProps> = ({
-  entradTipo,
+  tipoEntrada,
   precio,
   contador,
   onIncrement,
@@ -10,19 +10,19 @@ const FilaEntrada: React.FC<TicketRowProps> = ({
 }) => {
   return (
     <tr>
-      <td>{entradTipo}</td>
+      <td>{tipoEntrada}</td>
       <td>
         <div className="boton">
           <button
             onClick={onDecrement}
-            aria-label={`Decrementar ${entradTipo}`}
+            aria-label={`Decrementar ${tipoEntrada}`}
           >
             -
           </button>
           <span>{contador}</span>
           <button
             onClick={onIncrement}
-            aria-label={`Incrementar ${entradTipo}`}
+            aria-label={`Incrementar ${tipoEntrada}`}
           >
             +
           </button>

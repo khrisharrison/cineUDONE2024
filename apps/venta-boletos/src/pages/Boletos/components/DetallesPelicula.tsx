@@ -3,7 +3,7 @@ import '../../../styles/venta-boletos.css';
 import img1 from '../../../assets/Poster.png';
 
 interface Boleto{
-  cantBoletos: number
+  cantBoletos?: number
   total?: number
 }
 
@@ -58,7 +58,7 @@ export function DetallesPelicula({cantBoletos,total}: Boleto) {
             {cantBoletos ? (
               <tr className="detalles-funcion">
                 <td>Total a pagar: </td>
-                <td>${total}</td>
+                <td>${total?.toFixed(2)}</td>
               </tr>
             ) : null }
           </tbody>

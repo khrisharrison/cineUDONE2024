@@ -73,6 +73,7 @@ input[type='text']:focus {
 .pagar-button {
   background-color: #7000FF;
   padding: 10px 20px;
+  width: 100%;
   color: #fff;
   cursor: pointer;
   border-radius: 5px;

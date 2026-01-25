@@ -1,5 +1,5 @@
 export interface TicketRowProps {
-  entradTipo: string;
+  tipoEntrada: string;
   precio: string;
   contador: number;
   onIncrement: () => void;

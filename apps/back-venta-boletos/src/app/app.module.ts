@@ -8,7 +8,6 @@ import { PagoMovilModule } from '../modules/pagomovil/pago-movil.module';
 import { PagoTransferenciaModule } from '../modules/pagotransferencia/pago-transferencia.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { BancoModule } from '../modules/banco/banco.module';
-import { TarifaModule } from '../modules/precio/tarifa.module';
 import { FacturaModule } from '../modules/factura/lista-factura.module';
 import { PrecioModule } from '../modules/precio/precio.module';
 
@@ -19,7 +18,7 @@ import { PrecioModule } from '../modules/precio/precio.module';
     }),
     typeORMConfig,
     EventEmitterModule.forRoot(),
-    PaymentinfoModule,PagoTransferenciaModule,PagoMovilModule,BancoModule,TarifaModule,FacturaModule,PrecioModule],
+    PaymentinfoModule,PagoTransferenciaModule,PagoMovilModule,BancoModule,FacturaModule,PrecioModule],
   controllers: [AppController],
   providers: [AppService],
 })
