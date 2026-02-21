@@ -4,7 +4,6 @@ import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
   // Habilitar CORS
   app.enableCors({
     origin: '*', // Permite todas las solicitudes de cualquier dominio
@@ -19,7 +18,7 @@ async function bootstrap() {
   await app.listen(port);
 
   Logger.log(
-    '🚀 Application is running on: http://localhost:${port}/${globalPrefix}',
+  `🚀 Application is running on: http://localhost:${port}/${globalPrefix}`,
   );
 }
 

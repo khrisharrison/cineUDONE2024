@@ -3,17 +3,10 @@ import '../styles/MovieDetail.css';
 import { MdClose, MdPlayCircleOutline } from 'react-icons/md';
 import { Movie } from '../core/models/Movie';
 import { Schedule } from '../constants/schedules';
-import MoviePrice from './MoviePrice';
 import MovieTrailer from './MovieTrailer';
 import MovieSchedule from './MovieSchedule';
 
 const MovieDetail: React.FC<{ movie: Movie; onClose: () => void }> = ({ movie, onClose }) => {
-  const buyTicketUrl = 'http://localhost:4201/';
-
-  const handleBuyTicket = () => {
-    window.location.href = buyTicketUrl;
-  };
-
   const [showTrailer, setShowTrailer] = useState(false);
 
   const handlePosterClick = () => {
@@ -55,12 +48,6 @@ const MovieDetail: React.FC<{ movie: Movie; onClose: () => void }> = ({ movie, o
             <img src={movie.poster} alt={movie.title} loading="lazy" />
             <MdPlayCircleOutline className="play-icon" />
           </div>
-          <div className="movie-price-buy-container">
-            <MoviePrice price={movie.price} />
-            <button className="buy-button" onClick={handleBuyTicket}>
-              Comprar entrada
-            </button>
-          </div>
         </div>
         <div className="movie-content2">
           <div className="movie-info">
@@ -72,11 +59,9 @@ const MovieDetail: React.FC<{ movie: Movie; onClose: () => void }> = ({ movie, o
             </div>
             <p className="movie-synopsis">{movie.synopsis}</p>
           </div>
-
           <MovieSchedule scheduleByDate={scheduleByDate} />
         </div>
       </div>
-
       {showTrailer && <MovieTrailer trailerUrl={movie.trailerUrl} onClose={closeTrailer} />}
     </>
   );

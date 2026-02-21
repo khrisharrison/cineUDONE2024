@@ -15,7 +15,7 @@ export default defineConfig({
         secure: false, // Si estás usando HTTPS, cambia a true
       },
     },
-    port: 4201,
+    port: 4202,
     host: 'localhost',
   },
   preview: {

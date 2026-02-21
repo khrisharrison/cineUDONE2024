@@ -11,6 +11,12 @@ const MovieSchedule: React.FC<MovieScheduleProps> = ({ scheduleByDate }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const dates = Object.keys(scheduleByDate);
 
+  const buyTicketUrl = 'http://localhost:4202/';
+
+  const handleBuyTicket = () => {
+    window.location.href = buyTicketUrl;
+  };
+
   const formatDate = (dateKey: string) => {
     const date = new Date(dateKey);
     return {
@@ -55,12 +61,12 @@ const MovieSchedule: React.FC<MovieScheduleProps> = ({ scheduleByDate }) => {
                 {activeDate === dateKey && (
                   <ul className="schedule-list">
                     {scheduleByDate[dateKey].map((schedule, idx) => (
-                      <li key={idx} className="schedule-item">
+                      <button key={idx} className='schedule-item w-full' onClick={handleBuyTicket}>
                         <span className="time">
                           {formatTimeForUser(new Date(schedule.startTime))}
                         </span>
-                        <span className="room">{schedule.room}</span>
-                      </li>
+                        <span className="room">{schedule.room}</span>                        
+                      </button>
                     ))}
                   </ul>
                 )}
